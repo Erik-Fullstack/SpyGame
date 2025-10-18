@@ -14,10 +14,30 @@ function App() {
   const [gameActive, setGameActive] = useState<boolean>(false)
 
   return (
-    <>
-    <h1>SPIONSPEL</h1>
-    {gameActive ? <Game/> : <Button onClick={() => setGameActive(true)} variant='contained'>PLAY</Button>}
-    </>
+    <div className="min-h-screen bg-gradient-to-b from-neutral-950 to-black text-slate-100 flex items-center justify-center px-4">
+      {!gameActive ? (
+        <div className="w-full max-w-sm text-center">
+          <h1 className="text-3xl font-extrabold tracking-widest text-red-500 drop-shadow-[0_0_20px_rgba(239,68,68,0.35)]">
+            SPY GAME
+          </h1>
+          <p className="mt-2 text-sm text-neutral-400">Trust no one. Reveal wisely.</p>
+          <div className="mt-8">
+            <Button
+              onClick={() => setGameActive(true)}
+              variant='contained'
+              color='error'
+              className="w-full"
+            >
+              PLAY
+            </Button>
+          </div>
+        </div>
+      ) : (
+        <div className="w-full">
+          <Game gameActiveSetter={() => setGameActive(false)} />
+        </div>
+      )}
+    </div>
   )
 }
 
