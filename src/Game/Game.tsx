@@ -37,7 +37,7 @@ export default function Game(){
                 gameStateSetter={progressGameLoop}
                 numOfPlayers={numOfPlayers}
                 numOfSpies={numOfSpies}/>}
-            {gameState == "round" && <Round/>}
+            {gameState == "round" && <Round timer={timer}/>}
             {gameState == "finish" && <Finish/>}
         </div>
     )
