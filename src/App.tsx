@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 // <Round/> spelet körs. timern visas och knapp för att pausa timern. hoppar till <Finish/> när timern är 0
 // <Finish> Tiden är slut. gameActive sätts till false igen
 
-// TODO: Roles korten där man ser om man är spion eller vanlig
+// TODO: fixa animationer/dra grej för kort och flytta från webbläsare till app?
 function App() {
   const [gameActive, setGameActive] = useState<boolean>(false)
 
